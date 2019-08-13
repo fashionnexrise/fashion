@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+<!--
+<h1>Django Image Uploading</h1>
+<ul>
+  {% for x in name %}
+    <img src="{{ x.cover.url }}" alt="{{ x.title }}">
+  {% endfor %}
+</ul>
+-->
+
+
+<div class="container-fluid">
+<div class="row">
+  <div class="col-md-12">
+
+    <div id="mdb-lightbox-ui"></div>
+
+    <div class="mdb-lightbox no-margin">
+      {% for x in name %}
+      <figure style="text-align:center;"class="col-md-4">
+        <a class="black-text" href="{{ x.cover.url }}" data-size="1600x1067">
+          <img style="height:300px; width:;" alt="picture" src="{{ x.cover.url }}" class="img-fluid">
+          <h3 class="text-center my-3">{{ x.title }}</h3>
+        </a>
+      </figure>
+      {% endfor %}
+
+    </div>
+
+  </div>
+</div>
+</div>
+
+
+{% endblock %}
